@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vew</title>
+    <style>
+      img {
+        width: 100%;
+      }
+      div:nth-child(2) {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+      button {
+        display: flex;
+        border: none;
+        background: green;
+        padding: 0.4rem 1.3rem;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="../images/<%= obj.image %>" alt="" />
+    </div>
+    <div>
+      <% console.log(obj); %>
+      <form action="/edit/<%= obj._id %>">
+        <button type="submit">تعديل</button>
+      </form>
+      <form action="/delete/<%= obj._id %>">
+        <button style="background-color: red" type="submit">حذف</button>
+      </form>
+    </div>
+  </body>
+</html>
