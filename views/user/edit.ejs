@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="/user/add/<%= obj._id  %>?_method=PUT" method="post" enctype="multipart/form-data">
+    <div>
+      <div class="col-md-6">
+        <label for="inputGender" class="form-label">company</label>
+        <select name="comp" id="inputGender" class="form-select">
+          <option selected hidden disabled>Choose here ...</option>
+          <option <% if (obj.comp==="company one" ) { %>
+            selected
+            <% } %> >company one
+          </option>
+          <option <% if (obj.comp==="company two" ) { %>
+            selected
+            <% } %> >company two
+          </option>
+          <option <% if (obj.comp==="company three" ) { %>
+            selected
+            <% } %> >company three
+          </option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <div class="col-md-6">
+        <label for="inputGender" class="form-label">النخب</label>
+        <select name="type" id="inputGender" class="form-select">
+          <option selected hidden disabled>Choose here ...</option>
+          <option <% if (obj.type==="type one" ) { %>
+            selected
+            <% } %>>type one
+          </option>
+          <option <% if (obj.type==="type two" ) { %>
+            selected
+            <% } %>>type two
+          </option>
+          <option <% if (obj.type==="type three" ) { %>
+            selected
+            <% } %>>type three
+          </option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <input type="file" name="image" />
+    </div>
+    <div class="col-12">
+      <button type="submit">Update Product</button>
+    </div>
+  </form>
+</body>
+
+</html>
